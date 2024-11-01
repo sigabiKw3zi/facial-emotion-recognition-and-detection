@@ -7,5 +7,11 @@ public static class ServiceCollectionExtensions
     /// <summary>
     /// Add services to the container.
     /// </summary>
-    public static void RegisterServices(this IServiceCollection services) { }
+    public static void RegisterServices(this IServiceCollection services)
+    {
+        services.AddScoped<IDatasetsService, DatasetsService>();
+        services.AddScoped<IEmotionsService, EmotionsService>();
+        services.AddScoped<IImagesService, ImagesService>();
+        services.AddScoped<IModelsService, ModelsService>();
+    }
 }
